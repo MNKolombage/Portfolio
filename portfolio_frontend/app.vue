@@ -1,28 +1,37 @@
 <template>
   <div>
     <h1>{{ name }}</h1>
+    <div v-if="pendingProjects">Loading</div>
+    <div v-if="errorProjects">Error</div>
     <ul>
-      <li v-for="project in projects" :key="project.name">
+      <div v-for="project in projects" :key="project.name">
         <h2>{{ project.name }}</h2>
         <p>{{ project.description }}</p>
-      </li>
+      </div>
     </ul>
   </div>
+  <div v-if="pendingBlogs">Loading</div>
+  <div v-if="errorBlogs">Error</div>
+
+  <ul>
+    <div v-for="blog in blogs" :key="blog.name">
+      <h2>{{ blog.name }}</h2>
+      <p>{{ blog.description }}</p>
+    </div>
+  </ul>
 </template>
 
 <script setup>
-const name = 'Maleesha Nuwanthi';
-const projects = [
-  {
-    name: 'Project 1',
-    description: 'This is project 1',
-  },
-  {
-    name: 'Project 2',
-    description: 'This is project 2',
-  },
-];
-</script>
+const name = "Maleesha Nuwanthi";
+const {
+  data: projects,
+  pendingProjects,
+  errorProjects,
+} = useFetch("http://localhost:4000/projects");
 
-<style>
-</style>
+const {
+  data: blogs,
+  pendingBlogs,
+  errorBlogs,
+} = useFetch("http://localhost:4000/blogs");
+</script>

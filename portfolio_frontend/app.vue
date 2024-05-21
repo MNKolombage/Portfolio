@@ -27,11 +27,11 @@ const {
   data: projects,
   pendingProjects,
   errorProjects,
-} = useFetch("http://localhost:4000/projects");
+} = useFetch("http://localhost:5000/projects");
 
 const {
   data: blogs,
   pendingBlogs,
   errorBlogs,
-} = useFetch("http://localhost:4000/blogs");
+} = useFetch("http://localhost:5000/blogs");
 </script>

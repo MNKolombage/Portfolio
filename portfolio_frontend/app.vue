@@ -36,5 +36,5 @@ const {
 } = useFetch("http://localhost:5000/blogs");
 </script>
 
-<style>
+<style scoped>
 </style>

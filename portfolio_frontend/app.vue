@@ -35,3 +35,6 @@ const {
   errorBlogs,
 } = useFetch("http://localhost:5000/blogs");
 </script>
+
+<style>
+</style>

@@ -34,6 +34,40 @@
       <button type="submit">Create Project</button>
     </form>
   </div>
+
+  <div>
+    <h1>Update a new project</h1>
+    <form @submit.prevent="createProject">
+      <div>
+        <label for="name">Project Id:</label>
+        <input type="text" v-model="newProject.id" id="name" required />
+      </div>
+      <div>
+        <label for="name">Project Name:</label>
+        <input type="text" v-model="newProject.name" id="name" required />
+      </div>
+      <div>
+        <label for="description">Project Description:</label>
+        <textarea v-model="newProject.description" id="description" required></textarea>
+      </div>
+      <button type="submit">Update Project</button>
+    </form>
+  </div>
+
+  <div>
+    <h1>Delete project</h1>
+    <form @submit.prevent="createProject">
+      <div>
+        <label for="name">Project Name:</label>
+        <input type="text" v-model="newProject.name" id="name" required />
+      </div>
+      <div>
+        <label for="description">Project Description:</label>
+        <textarea v-model="newProject.description" id="description" required></textarea>
+      </div>
+      <button type="submit">Create Project</button>
+    </form>
+  </div>
 </template>
 
 <script setup>
